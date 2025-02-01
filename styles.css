@@ -1,4 +1,4 @@
-/* styles.css */
+/* Estilos generales */
 body {
     text-align: center;
     font-family: 'Arial', sans-serif;
@@ -9,25 +9,22 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0; /* Elimina los márgenes predeterminados */
 }
-.question-image {
-    width: 80%; /* Ajusta el tamaño según sea necesario */
-    max-width: 400px; /* Puedes modificar este valor */
-    height: auto;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
 
 .container {
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px; /* Ancho máximo para pantallas grandes */
+    margin: 20px auto;
 }
 
 h1 {
     font-size: 2em;
+    margin-bottom: 20px;
 }
 
 .buttons {
@@ -42,13 +39,16 @@ button {
     cursor: pointer;
     border-radius: 5px;
     transition: all 0.3s ease;
+    width: 150px;
 }
 
+/* Estilos para el botón "Sí" */
 #yes {
     background-color: #ff69b4;
     color: white;
 }
 
+/* Estilos para el botón "No" */
 #no {
     background-color: #ccc;
     color: black;
@@ -58,6 +58,7 @@ button {
     display: none;
 }
 
+/* Estilos para el mensaje romántico */
 .romantic {
     font-size: 1.5em;
     margin-top: 20px;
@@ -73,6 +74,7 @@ button {
     margin: 0 auto;
 }
 
+/* Estilos para el contenedor de flores */
 #flowers {
     position: fixed;
     top: 0;
@@ -82,13 +84,14 @@ button {
     pointer-events: none;
 }
 
+/* Estilos de la flor */
 .flower {
     position: absolute;
-    width: 100px; /* Aumenta el tamaño de las flores */
+    width: 100px;
     height: 100px;
-    background-image: url('flower.png'); /* Asegúrate de tener una imagen de flor */
+    background-image: url('flower.png');
     background-size: cover;
-    animation: fall 10s linear infinite; /* Duración aumentada a 5 segundos */
+    animation: fall 10s linear infinite;
 }
 
 @keyframes fall {
@@ -99,5 +102,60 @@ button {
     100% {
         transform: translateY(100vh) rotate(360deg);
         opacity: 0;
+    }
+}
+
+/* Media Queries para dispositivos pequeños */
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    button {
+        font-size: 16px;
+        width: 130px;
+    }
+
+    .romantic {
+        font-size: 1.3em;
+    }
+
+    .romantic img {
+        width: 90%;
+    }
+}
+
+/* Media Queries para dispositivos muy pequeños (móviles) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .romantic {
+        font-size: 1.2em;
+    }
+
+    .romantic img {
+        width: 90%;
     }
 }
